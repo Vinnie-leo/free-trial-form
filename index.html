@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Learn to code by watching others</h1>
+        <p>See how experienced delevlopers solve problems in real-time. Watching scripted tutorials is great,
+            but understanding how developers think is invaluble.</p>
+    </header>
+
+    
+
+    
+    <main>
+        <div class="free-trial">
+            <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
+       </div>
+        <div class="formbox">
+            
+            <form id="my-form">
+                <input type="text" id="first-name" name="first-name"  placeholder="First Name"></input>
+                <input type="text" id="last-name" name="last-name" placeholder="Last Name" ></input>
+                <input type="text" id="user-email" name="user-email" placeholder="Email Address"></input>
+                <input type="password" id="user-pword" name="user-pword" placeholder="Password"></input>
+                <input class="submit" type="button" value="CLAIM YOUR FREE TRIAL">
+            </form>
+            <p class="terms">By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+        </div>>
+    </main>
+
+
+    <script>
+    
+    const userFirstName = document.querySelector('#first-name');
+    const userLastName = document.querySelector('#last-name');
+    const userPassword = document.querySelector('#user-pword');
+    const userEmail = document.querySelector('#user-email');
+    const submit = document.querySelector('.submit');
+    let isValid = 0;
+    
+    function checkIfValidFirstName(){
+        if(userFirstName.value.length > 0){
+            userFirstName.style.border = "solid 3px green";
+            isValid++;  
+            console.log(isValid); 
+        }
+        else{
+        userFirstName.style.border = "solid 3px red";
+        console.log(isValid); 
+        }   
+    }
+    
+    function checkIfValidLastName(){
+        if(userLastName.value.length > 0){
+            userLastName.style.border = "solid 3px green";
+            isValid++   
+            console.log(isValid);  
+        }
+        else{
+        userLastName.style.border = "solid 3px red";
+        console.log(isValid); 
+        }  
+    }
+    
+    function checkIfValidEmail(){
+        if(userEmail.value.length > 0){
+            userEmail.style.border = "solid 3px green";
+            isValid++
+            console.log(isValid); 
+        }
+        else{
+        userEmail.style.border = "solid 3px red";
+        console.log(isValid); 
+        }  
+    }
+
+    function checkIfValidPassword(){
+        if(userPassword.value.length > 0){
+            userPassword.style.border = "solid 3px green";
+            isValid++
+            console.log(isValid); 
+        }
+        else{
+        userPassword.style.border = "solid 3px red";
+        console.log(isValid); 
+        } 
+    }
+
+    function checkIfValidFields(){
+        if (isValid => 4){
+            document.forms["my-form"].submit();
+            alert("Thank you for claiming your free trial!");
+            console.log(isValid); 
+        }
+        else{
+            alert("Please fill out all fields");
+            console.log(isValid); 
+        }
+    }
+    
+    userFirstName.addEventListener('focusout', checkIfValidFirstName);
+    userLastName.addEventListener('focusout', checkIfValidLastName);
+    userEmail.addEventListener('focusout', checkIfValidEmail);
+    userPassword.addEventListener('focusout', checkIfValidPassword);
+    submit.addEventListener('click', checkIfValidFields);
+
+    
+
+    </script>
+    
+</body>
+</html>
