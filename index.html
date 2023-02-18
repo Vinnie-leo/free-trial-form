@@ -28,6 +28,7 @@
                 <input type="text" id="last-name" name="last-name" placeholder="Last Name" ></input>
                 <input type="text" id="user-email" name="user-email" placeholder="Email Address"></input>
                 <input type="password" id="user-pword" name="user-pword" placeholder="Password"></input>
+                <p class="warning"></p>
                 <input class="submit" type="button" value="CLAIM YOUR FREE TRIAL">
             </form>
             <p class="terms">By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
@@ -42,6 +43,7 @@
     const userPassword = document.querySelector('#user-pword');
     const userEmail = document.querySelector('#user-email');
     const submit = document.querySelector('.submit');
+    const warning = document.querySelector('.warning');
     let isValid = 0;
     
     function checkIfValidFirstName(){
@@ -95,12 +97,12 @@
     function checkIfValidFields(){
         if (isValid >= 4){
             document.forms["my-form"].submit();
-            alert("Thank you for claiming your free trial!");
+            window.location.href="registered.html";
             console.log(isValid); 
         }
         else{
-            alert("Please fill out all fields");
-            console.log(isValid); 
+            warning.innerHTML="Please fill out all fields!";
+            
         }
     }
     
