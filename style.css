@@ -15,6 +15,7 @@ body{
     gap:20px;
     padding:70px 0px;
     background-image:url('images/bg-intro-mobile.png');
+    background-repeat:no-repeat;
     background-color:hsl(0, 100%, 74%);
     width:375px;  
 }
